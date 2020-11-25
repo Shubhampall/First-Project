@@ -10,7 +10,7 @@ import {
     ImageBackground,
     Button,
   } from 'react-native';
-import LoginBack  from '../../constant/images';
+import {LoginBack}  from '../../constant/images';
 import Inputcomponent from '../Layout/Input';
 import  Icon  from 'react-native-vector-icons/AntDesign';
 import Icons from "react-native-vector-icons/MaterialCommunityIcons"
@@ -72,7 +72,7 @@ const Registration=()=>{
           <Text style={{color:"#663399",top:"03%"}}>Privcy Policy</Text>
           </View>
           <View style={{width:"70%",top:"10%"}}>
-          <ButtonComponent />
+          <ButtonComponent title="Sign out " />
           </View>
           </View>
           </ImageBackground>

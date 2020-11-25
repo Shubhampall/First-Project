@@ -13,7 +13,7 @@ import {
 const ButtonComponent=({title})=>{
     return (
         <Button 
-        title="Click me"
+        title={title}
         color="#663399"
         />
     )
