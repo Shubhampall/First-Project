@@ -1,0 +1,75 @@
+import {StyleSheet} from 'react-native';
+
+const styles = StyleSheet.create({
+  Background: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    backgroundColor: '#FFFAFA',
+    alignItems: 'center',
+    height: '100%',
+  },
+  Header: {
+    borderColor: 'black',
+    borderWidth: 0.1,
+    top: '-10%',
+    borderTopColor: '#FFFFFF',
+    backgroundColor: '#FFFFFF',
+    right: '20%',
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 1},
+    shadowRadius: 2,
+    shadowOpacity: 0.05,
+    width: '100%',
+    left: '0.2%',
+    padding: '0.5%',
+    alignItems: 'center',
+    elevation: 1,
+    height: '70%',
+    paddingTop: 20,
+  },
+  input: {
+    marginTop: '05%',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    width: '90%',
+    borderColor: 'black',
+    borderWidth: 0,
+    // eslint-disable-next-line no-dupe-keys
+    backgroundColor: '#FFFFFF',
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 1},
+    shadowRadius: 2,
+    shadowOpacity: 0.05,
+    borderRadius: 5,
+    elevation: 2,
+  },
+  item: {
+    marginTop: 24,
+    padding: 30,
+  },
+  upper: {marginTop: '30%', width: '100%', height: '38%'},
+  secondupper: {top: 0, width: '100%', height: '30%'},
+  Top4: {top: '04%'},
+  buttonView: {flexDirection: 'row', width: '80%'},
+  middleText: {fontSize: 50, marginLeft: '10%', top: '01%'},
+  scrollView: {width: '100%', height: '80%'},
+  // eslint-disable-next-line no-dupe-keys
+  scroll: {marginTop: 60, marginTop: '-5%', marginBottom: '05%'},
+  map: {
+    width: 'auto',
+    height: 120,
+    marginTop: '5%',
+    alignItems: 'center',
+  },
+  Top10: {
+    top: '10%',
+  },
+  shopping: {
+    marginLeft: '10%',
+    top: '10%',
+  },
+});
+export default styles;

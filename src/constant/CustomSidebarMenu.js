@@ -1,38 +1,24 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  Image,
-  Text,
-} from 'react-native';
+import {View, StyleSheet, Image, Text} from 'react-native';
 import {
   DrawerContentScrollView,
   DrawerItemList,
-  DrawerItem,
 } from '@react-navigation/drawer';
-import {Logo} from "./images"
-import  Icon  from 'react-native-vector-icons/Entypo'
+import Icon from 'react-native-vector-icons/Entypo';
+
+import {Logo} from './images';
+
 const CustomSidebarMenu = (props) => {
   return (
-    <View style={{flex: 1}}>
-      <View style={{flexDirection:'row'}}>
-      <Image
-        source={Logo}
-        style={styles.sideMenuProfileIcon}
-      />
-      <Icon name="menu" size={40} style={{marginLeft:130,marginTop:30}} />
+    <View style={styles.f1}>
+      <View style={styles.flexdirection}>
+        <Image source={Logo} style={styles.sideMenuProfileIcon} />
+        <Icon name="menu" size={40} style={styles.Icon} />
       </View>
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
       </DrawerContentScrollView>
-      <Text
-        style={{
-          fontSize: 16,
-          textAlign: 'center',
-          color: 'grey'
-        }}>
-        www.Gemsessence.com
-      </Text>
+      <Text style={styles.Text}>www.Gemsessence.com</Text>
     </View>
   );
 };
@@ -44,7 +30,14 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 100 / 2,
     alignSelf: 'center',
-
+  },
+  f1: {flex: 1},
+  flexdirection: {flexDirection: 'row'},
+  Icon: {marginLeft: 130, marginTop: 30},
+  Text: {
+    fontSize: 16,
+    textAlign: 'center',
+    color: 'grey',
   },
 });
 
