@@ -10,11 +10,14 @@ import {
     Button
   } from 'react-native';
 
-const ButtonComponent=({title})=>{
+const ButtonComponent=({title,navigation,page=null})=>{
     return (
         <Button 
         title={title}
         color="#663399"
+        onPress={()=>{
+          page !=null ? navigation.navigate(page):alert("Please check")
+        }}
         />
     )
 }

@@ -15,9 +15,9 @@ import  Icon  from 'react-native-vector-icons/AntDesign';
 import Icons from "react-native-vector-icons/MaterialCommunityIcons"
 import ButtonComponent from "../Layout/Button"
 import CheckBox from '@react-native-community/checkbox';
-function Login() {
+const Login=({navigation})=> {
     return (
-          <ImageBackground source={images.LoginBack} style={styles.image}>
+          <ImageBackground source={LoginBack} style={styles.image}>
           <View style={styles.demo}>
           <View style={styles.signuppage}>
           <View>
@@ -60,7 +60,7 @@ function Login() {
             <Text style={{top:"03%"}}>Keep Me Remember</Text> 
           </View>
           <View style={{width:"70%",top:"15%"}}>
-          <ButtonComponent title="Login "/>
+          <ButtonComponent title="Login" navigation={navigation} page="Main"/>
           </View>
           </View>
           </ImageBackground>

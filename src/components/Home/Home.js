@@ -1,18 +1,25 @@
-import React from 'react'
-import { Text, View,StyleSheet, } from 'react-native'
+import React,{useState,useEffect} from 'react'
+import { Text, View,StyleSheet, Button, } from 'react-native'
 import { ScrollView, TextInput } from 'react-native-gesture-handler'
 import HeaderComponent from '../Layout/Header'
 import Inputcomponent from '../Layout/Input'
 import Icon from "react-native-vector-icons/EvilIcons"
 import Diamond from "react-native-vector-icons/MaterialCommunityIcons"
 import Fashion from "react-native-vector-icons/Fontisto"
-import Card from '../Layout/Card'
-import articles from "../../constant/article"
 import {ice} from '../../constant/images';
-const Home=()=>{
-    return (
+import Card from "../Layout/Card"
+import { url } from '../../constant/url'
+const Home=({navigation})=>{
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch(`${url}posts`)
+      .then((response) => response.json())
+      .then((json) => setData(json))
+      .catch((error) => alert(error))
+  }, []);
+  return (
         <View style={styles.Background}>
-        <HeaderComponent name="Home"/>
+        <HeaderComponent name="Home" navigation={navigation} />
         <View style={styles.Header}>
         <View style={styles.input}>
         <Inputcomponent placeholder="What are you looking for?" />
@@ -32,14 +39,15 @@ const Home=()=>{
         </View>
         </View>
         </View >
-        <ScrollView>
-        <Card item={articles[0]} pic={ice} />  
-        <Card item={articles[0]} pic={ice} />
-        <Card item={articles[0]} pic={ice} />
-        <Card item={articles[0]} pic={ice} />
-        <Card item={articles[0]} pic={ice} />
-        <Card item={articles[0]} pic={ice} />
+        <View style={{width:"100%",height:"80%"}}>
+        <ScrollView  height="100%" width="100%" style={{marginTop:60,marginTop:"15%",marginBottom:"05%"}}>  
+            {data.map((item)=>{
+              return(<View style={{width:"auto",height:120,marginTop:"5%",alignItems:'center'}}>
+              <Card item={item} pic={ice}></Card>
+              </View>) 
+            })}      
         </ScrollView>
+        </View>
         </View>
     )
 }
@@ -50,13 +58,13 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         backgroundColor:"#FFFAFA",
         alignItems:"center",
-        height:"100%"
+        height:"100%",
         
       },
       Header:{
         borderColor: "black",
         borderWidth:0.1,
-        top:"7%",
+        top:"10%",
         borderTopColor:"#FFFFFF",
         backgroundColor: '#FFFFFF',
         right:"20%",
@@ -70,7 +78,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         elevation:1,
         height:"25%",
-     
+      alignItems:"center"
         
 },
 input:{
@@ -93,6 +101,5 @@ input:{
   marginTop:24,
   padding:30
 }
-
   });
 export default Home

@@ -3,17 +3,18 @@ import { View,StyleSheet,Text } from 'react-native'
 import  Icon  from 'react-native-vector-icons/Entypo'
 import  Bell  from 'react-native-vector-icons/FontAwesome'
 import Basket from 'react-native-vector-icons/MaterialIcons'
-const CheckIcon=({name})=>{
+const CheckIcon=({name,navigation})=>{
  if(name=="Home"){
- return(<Icon.Button  backgroundColor="#FFFFFF">
+ return(<Icon.Button size={40} backgroundColor="#FFFFFF" style={{top:-8}}
+ onPress={()=>navigation.openDrawer()}>
      <Icon name="menu" size={30} />
  </Icon.Button>)
  }
 }
-const HeaderComponent=({name})=>{
+const HeaderComponent=({name,navigation})=>{
     return (
         <View style={styles.Header}>
-          <CheckIcon name={name}/>
+          <CheckIcon name={name} navigation={navigation}/>
            <Text style={styles.text}>{name}</Text>
           <View style={{flexDirection:'row',left:"43%"}}>
           <Icon.Button  style={styles.button} 
@@ -36,11 +37,11 @@ const styles = StyleSheet.create({
        backgroundColor:"#FFFFFF",
        top:0,
        position:"absolute",
-       elevation:1
+       elevation:1,
       },
       text:{
           fontSize:18,
-          top:11,
+          top:14,
         },
      button:{
          top:5,
