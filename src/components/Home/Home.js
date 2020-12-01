@@ -4,7 +4,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import Diamond from 'react-native-vector-icons/MaterialCommunityIcons';
 import Fashion from 'react-native-vector-icons/Fontisto';
-
+import {useSelector} from 'react-redux';
 import HeaderComponent from '../Layout/Header';
 import Inputcomponent from '../Layout/Input';
 import {ice} from '../../constant/images';
@@ -13,6 +13,8 @@ import {url} from '../../constant/url';
 import styles from './Style';
 
 const Home = ({navigation}) => {
+  // const state = useSelector((state) => state.email);
+  // console.log(state.email);
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
   useEffect(() => {

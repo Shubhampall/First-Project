@@ -1,15 +1,15 @@
 import React from 'react';
-import {View, Text, ImageBackground} from 'react-native';
+import {View, Text, ImageBackground, Button, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CheckBox from '@react-native-community/checkbox';
-
+import {useSelector} from 'react-redux';
 import {styles} from './Style';
 import {LoginBack} from '../../constant/images';
 import Inputcomponent from '../Layout/Input';
 import ButtonComponent from '../Layout/Button';
-
-const Login = ({navigation}) => {
+const Login = ({navigation, addToEmailHandler, addToPasswordHandler}) => {
+  const state = useSelector((state) => state.Login);
   return (
     <ImageBackground source={LoginBack} style={styles.image}>
       <View style={styles.demo}>
@@ -45,27 +45,52 @@ const Login = ({navigation}) => {
           Login with classic way
         </Text>
         <View style={styles.searchSection}>
-          <Icons name="email" size={20} style={styles.padding5} />
-          <Inputcomponent placeholder="Enter Your Email" style={styles.input} />
+          <View style={styles.ViewIcon}>
+            <Icons name="email" size={20} style={styles.padding5} />
+          </View>
+          <View style={styles.ViewInput}>
+            <Inputcomponent
+              placeholder="Enter Your Email"
+              handle={(text) => {
+                addToEmailHandler(text);
+              }}
+            />
+          </View>
         </View>
         <View style={styles.searchSection1}>
-          <Icons name="onepassword" size={20} style={styles.padding5} />
-          <Inputcomponent
-            placeholder="Enter Your Password"
-            show={true}
-            style={styles.input}
-          />
+          <View style={styles.ViewIcon}>
+            <Icons name="onepassword" size={20} style={styles.padding5} />
+          </View>
+          <View style={styles.ViewInput}>
+            <Inputcomponent
+              placeholder="Enter Your Password"
+              show={true}
+              handle={(text) => {
+                addToPasswordHandler(text);
+              }}
+            />
+          </View>
         </View>
         <View style={styles.checkbox}>
           <CheckBox borderColor="#663399" style={styles.check} />
           <Text style={styles.Top3}>Keep Me Remember</Text>
         </View>
         <View style={styles.buttonComponent}>
-          <ButtonComponent title="Login" navigation={navigation} page="Main" />
+          <ButtonComponent
+            title="Login"
+            navigation={navigation}
+            page="Main"
+            pass={state.email}
+          />
         </View>
       </View>
     </ImageBackground>
   );
 };
-
+// const mapDispatchToProps = (dispatch) => ({
+//   addToEmailHandler: (data) => dispatch(addToEmail(data)),
+//   addToPasswordHandler: (data) => dispatch(addToPassword(data)),
+// });
+// const mapStateToProps = (state) => ({data: state.email});
+// export default connect(mapStateToProps, mapDispatchToProps)(Login);
 export default Login;

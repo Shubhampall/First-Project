@@ -10,7 +10,12 @@ import Inputcomponent from '../Layout/Input';
 import ButtonComponent from '../Layout/Button';
 import styles from './style';
 
-const Registration = () => {
+const Registration = ({
+  navigation,
+  addToEmailHandler,
+  addToPasswordHandler,
+  addToNameHandler,
+}) => {
   return (
     <ImageBackground source={LoginBack} style={styles.image}>
       <View style={styles.demo}>
@@ -46,11 +51,23 @@ const Registration = () => {
         </Text>
         <View style={styles.searchSection}>
           <Iconsuser name="user" size={20} style={styles.padding5} />
-          <Inputcomponent placeholder="Enter Your Name" style={styles.input} />
+          <Inputcomponent
+            placeholder="Enter Your Name"
+            style={styles.input}
+            handle={(text) => {
+              addToNameHandler(text);
+            }}
+          />
         </View>
         <View style={styles.searchSection1}>
           <Icons name="email" size={20} style={styles.padding5} />
-          <Inputcomponent placeholder="Enter Your Email" style={styles.input} />
+          <Inputcomponent
+            placeholder="Enter Your Email"
+            style={styles.input}
+            handle={(text) => {
+              addToEmailHandler(text);
+            }}
+          />
         </View>
         <View style={styles.searchSection1}>
           <Icons name="onepassword" size={20} style={styles.padding5} />
@@ -58,6 +75,9 @@ const Registration = () => {
             placeholder="Enter Your PassWord"
             show={true}
             style={styles.input}
+            handle={(text) => {
+              addToPasswordHandler(text);
+            }}
           />
         </View>
         <View style={styles.checkbox}>

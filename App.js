@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {
   SafeAreaView,
@@ -24,22 +24,25 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import Login from './src/components/Login/Login';
 import Registration from './src/components/Registration/Registration';
-import Home from './src/components/Home/Home';
 import index from './src/components/Main';
-  
-const Stack=createStackNavigator();
-const App: () => React$Node = () => {
+import ConfigStore from './src/Store/store/index';
+import {Provider} from 'react-redux';
+import LoginContainer from './src/Store/Container/LoginContainer';
+const Stack = createStackNavigator();
+const App = () => {
   return (
+    // <Provider store={ConfigStore}>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login" headerMode={null}>
-        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Login" component={LoginContainer} />
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="Main" component={index} />
       </Stack.Navigator>
     </NavigationContainer>
+    // </Provider>
   );
 };
 

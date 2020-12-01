@@ -100,4 +100,6 @@ export const styles = StyleSheet.create({
   Top3: {top: '03%'},
   buttonComponent: {width: '70%', top: '15%'},
   Textcolor: {color: '#8898AA'},
+  ViewInput: {width: '80%', marginLeft: '5%'},
+  ViewIcon: {width: 'auto', marginLeft: '5%'},
 });
