@@ -8,8 +8,8 @@ const ButtonComponent = ({title, navigation, page = null, pass}) => {
       color="#663399"
       onPress={() => {
         // eslint-disable-next-line no-alert
-        // page != null ? navigation.navigate(page) : alert('Please check');
-        Alert.alert(pass);
+        page != null ? navigation.navigate(page) : alert('Please check');
+        // Alert.alert(pass);
       }}
     />
   );

@@ -31,6 +31,7 @@ import index from './src/components/Main';
 import ConfigStore from './src/Store/store/index';
 import {Provider} from 'react-redux';
 import LoginContainer from './src/Store/Container/LoginContainer';
+import RegistrationContainer from './src/Store/Container/RegistrationContainer';
 const Stack = createStackNavigator();
 const App = () => {
   return (
@@ -38,7 +39,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login" headerMode={null}>
         <Stack.Screen name="Login" component={LoginContainer} />
-        <Stack.Screen name="Registration" component={Registration} />
+        <Stack.Screen name="Registration" component={RegistrationContainer} />
         <Stack.Screen name="Main" component={index} />
       </Stack.Navigator>
     </NavigationContainer>

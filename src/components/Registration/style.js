@@ -97,5 +97,7 @@ const styles = StyleSheet.create({
   Top3: {top: '03%'},
   colorTop: {color: '#663399', top: '03%'},
   Buttocomponet: {width: '70%', top: '10%'},
+  ViewInput: {width: '80%', marginLeft: '5%'},
+  ViewIcon: {width: 'auto', marginLeft: '5%'},
 });
 export default styles;

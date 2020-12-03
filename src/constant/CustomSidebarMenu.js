@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, StyleSheet, Image, Text} from 'react-native';
+import {View, StyleSheet, Image, Text, Linking} from 'react-native';
 import {
   DrawerContentScrollView,
+  DrawerItem,
   DrawerItemList,
 } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/Entypo';
@@ -17,6 +18,14 @@ const CustomSidebarMenu = (props) => {
       </View>
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
+        <DrawerItem
+          label="Visit Us"
+          onPress={() =>
+            Linking.openURL(
+              'https://demos.creative-tim.com/argon-react-native/',
+            )
+          }
+        />
       </DrawerContentScrollView>
       <Text style={styles.Text}>www.Gemsessence.com</Text>
     </View>

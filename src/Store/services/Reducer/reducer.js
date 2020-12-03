@@ -1,4 +1,3 @@
-import {act} from 'react-test-renderer';
 import {
   Add_To_Email,
   Add_To_Password,

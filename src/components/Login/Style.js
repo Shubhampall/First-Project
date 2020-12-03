@@ -98,7 +98,7 @@ export const styles = StyleSheet.create({
   checkbox: {flexDirection: 'row', top: '07%', marginRight: '45%'},
   check: {borderWidth: 3},
   Top3: {top: '03%'},
-  buttonComponent: {width: '70%', top: '15%'},
+  buttonComponent: {width: '70%', top: '05%'},
   Textcolor: {color: '#8898AA'},
   ViewInput: {width: '80%', marginLeft: '5%'},
   ViewIcon: {width: 'auto', marginLeft: '5%'},

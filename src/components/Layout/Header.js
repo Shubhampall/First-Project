@@ -3,7 +3,8 @@ import {View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
 import Bell from 'react-native-vector-icons/FontAwesome';
 import Basket from 'react-native-vector-icons/MaterialIcons';
-
+import Back from 'react-native-vector-icons/Ionicons';
+import Home from '../Home/Home'
 import styles from './Style';
 
 const CheckIcon = ({name, navigation}) => {
@@ -15,6 +16,16 @@ const CheckIcon = ({name, navigation}) => {
         style={styles.Top8}
         onPress={() => navigation.openDrawer()}>
         <Icon name="menu" size={30} />
+      </Icon.Button>
+    );
+  } else {
+    return (
+      <Icon.Button
+        size={40}
+        backgroundColor="#FFFFFF"
+        style={styles.Top8}
+        onPress={() => navigation.navigate(Home)}>
+        <Back name="arrow-back" size={30} />
       </Icon.Button>
     );
   }

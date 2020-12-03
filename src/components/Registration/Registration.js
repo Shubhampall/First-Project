@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ImageBackground} from 'react-native';
+import {View, Text, ImageBackground, Linking} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Iconsuser from 'react-native-vector-icons/FontAwesome';
@@ -31,7 +31,7 @@ const Registration = ({
               name="github"
               backgroundColor="#FFFFFF"
               // eslint-disable-next-line no-alert
-              onPress={() => alert('Login with Githu')}>
+              onPress={() => Linking.openURL('https://github.com/')}>
               <Icon name="github" size={30} />
               <Text style={styles.IconText}>Github</Text>
             </Icon.Button>
@@ -40,7 +40,7 @@ const Registration = ({
               style={styles.button}
               backgroundColor="#FFFFFF"
               // eslint-disable-next-line no-alert
-              onPress={() => alert('Login with Githu')}>
+              onPress={() => Linking.openURL('https://gmail.com/')}>
               <Icon name="google" size={34} style={styles.margin10} />
               <Text style={styles.IconText}>Google</Text>
             </Icon.Button>
@@ -50,35 +50,47 @@ const Registration = ({
           or sign with classic way
         </Text>
         <View style={styles.searchSection}>
-          <Iconsuser name="user" size={20} style={styles.padding5} />
-          <Inputcomponent
-            placeholder="Enter Your Name"
-            style={styles.input}
-            handle={(text) => {
-              addToNameHandler(text);
-            }}
-          />
+          <View style={styles.ViewIcon}>
+            <Iconsuser name="user" size={20} style={styles.padding5} />
+          </View>
+          <View style={styles.ViewInput}>
+            <Inputcomponent
+              placeholder="Enter Your Name"
+              style={styles.input}
+              handle={(text) => {
+                addToNameHandler(text);
+              }}
+            />
+          </View>
         </View>
         <View style={styles.searchSection1}>
-          <Icons name="email" size={20} style={styles.padding5} />
-          <Inputcomponent
-            placeholder="Enter Your Email"
-            style={styles.input}
-            handle={(text) => {
-              addToEmailHandler(text);
-            }}
-          />
+          <View style={styles.ViewIcon}>
+            <Icons name="email" size={20} style={styles.padding5} />
+          </View>
+          <View style={styles.ViewInput}>
+            <Inputcomponent
+              placeholder="Enter Your Email"
+              style={styles.input}
+              handle={(text) => {
+                addToEmailHandler(text);
+              }}
+            />
+          </View>
         </View>
         <View style={styles.searchSection1}>
-          <Icons name="onepassword" size={20} style={styles.padding5} />
-          <Inputcomponent
-            placeholder="Enter Your PassWord"
-            show={true}
-            style={styles.input}
-            handle={(text) => {
-              addToPasswordHandler(text);
-            }}
-          />
+          <View style={styles.ViewIcon}>
+            <Icons name="onepassword" size={20} style={styles.padding5} />
+          </View>
+          <View style={styles.ViewInput}>
+            <Inputcomponent
+              placeholder="Enter Your PassWord"
+              show={true}
+              style={styles.input}
+              handle={(text) => {
+                addToPasswordHandler(text);
+              }}
+            />
+          </View>
         </View>
         <View style={styles.checkbox}>
           <CheckBox borderColor="#663399" style={styles.checkBox} />
@@ -86,7 +98,11 @@ const Registration = ({
           <Text style={styles.colorTop}>Privcy Policy</Text>
         </View>
         <View style={styles.Buttocomponet}>
-          <ButtonComponent title="Sign out " />
+          <ButtonComponent
+            title="Sign out "
+            navigation={navigation}
+            page="Login"
+          />
         </View>
       </View>
     </ImageBackground>
