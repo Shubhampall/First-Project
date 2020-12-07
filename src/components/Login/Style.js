@@ -102,4 +102,5 @@ export const styles = StyleSheet.create({
   Textcolor: {color: '#8898AA'},
   ViewInput: {width: '80%', marginLeft: '5%'},
   ViewIcon: {width: 'auto', marginLeft: '5%'},
+  Top30: {color: 'blue', marginTop: 30},
 });

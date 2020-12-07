@@ -30,7 +30,6 @@ const Registration = ({
               style={styles.button}
               name="github"
               backgroundColor="#FFFFFF"
-              // eslint-disable-next-line no-alert
               onPress={() => Linking.openURL('https://github.com/')}>
               <Icon name="github" size={30} />
               <Text style={styles.IconText}>Github</Text>
@@ -39,7 +38,6 @@ const Registration = ({
             <Icon.Button
               style={styles.button}
               backgroundColor="#FFFFFF"
-              // eslint-disable-next-line no-alert
               onPress={() => Linking.openURL('https://gmail.com/')}>
               <Icon name="google" size={34} style={styles.margin10} />
               <Text style={styles.IconText}>Google</Text>

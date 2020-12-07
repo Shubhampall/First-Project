@@ -1,21 +1,16 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ImageBackground,
-  Button,
-  Alert,
-  Linking,
-} from 'react-native';
+import {View, Text, ImageBackground, Linking} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CheckBox from '@react-native-community/checkbox';
 import {useSelector} from 'react-redux';
+
 import {styles} from './Style';
 import {LoginBack} from '../../constant/images';
 import Inputcomponent from '../Layout/Input';
 import ButtonComponent from '../Layout/Button';
 import Registration from '../Registration/Registration';
+
 const Login = ({navigation, addToEmailHandler, addToPasswordHandler}) => {
   const state = useSelector((state) => state.Login);
   return (
@@ -30,7 +25,6 @@ const Login = ({navigation, addToEmailHandler, addToPasswordHandler}) => {
               <Icon.Button
                 style={styles.button}
                 backgroundColor="#FFFFFF"
-                // eslint-disable-next-line no-alert
                 onPress={() => Linking.openURL('https://github.com/')}>
                 <Icon name="github" size={30} />
                 <Text style={styles.IconButton}>Github</Text>
@@ -41,7 +35,6 @@ const Login = ({navigation, addToEmailHandler, addToPasswordHandler}) => {
               <Icon.Button
                 style={styles.button}
                 backgroundColor="#FFFFFF"
-                // eslint-disable-next-line no-alert
                 onPress={() => Linking.openURL('https://gmail.com/')}>
                 <Icon name="google" size={34} style={styles.marginLeft} />
                 <Text style={styles.IconButton}>Google</Text>
@@ -85,7 +78,7 @@ const Login = ({navigation, addToEmailHandler, addToPasswordHandler}) => {
           <Text style={styles.Top3}>Keep Me Remember</Text>
         </View>
         <Text
-          style={{color: 'blue', marginTop: 30}}
+          style={styles.Top30}
           onPress={() => navigation.navigate(Registration)}>
           Registration
         </Text>

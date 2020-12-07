@@ -1,5 +1,5 @@
 import React from 'react';
-import {Alert, Button} from 'react-native';
+import {Button} from 'react-native';
 
 const ButtonComponent = ({title, navigation, page = null, pass}) => {
   return (
