@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, ImageBackground, Linking} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -16,9 +16,10 @@ const Registration = ({
   addToPasswordHandler,
   addToNameHandler,
 }) => {
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
     <ImageBackground source={LoginBack} style={styles.image}>
-      <View style={styles.demo}>
+      <View style={styles.demo} backgroundColor="#FFFAFA">
         <View style={styles.signuppage}>
           <View>
             <Text style={styles.Textcolor} size={12}>
@@ -91,7 +92,13 @@ const Registration = ({
           </View>
         </View>
         <View style={styles.checkbox}>
-          <CheckBox borderColor="#663399" style={styles.checkBox} />
+          <CheckBox
+            borderColor="#663399"
+            style={styles.checkBox}
+            disabled={false}
+            value={toggleCheckBox}
+            onValueChange={(newValue) => setToggleCheckBox(newValue)}
+          />
           <Text style={styles.Top3}>i agree with the </Text>
           <Text style={styles.colorTop}>Privcy Policy</Text>
         </View>

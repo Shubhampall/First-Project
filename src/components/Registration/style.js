@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000a0',
   },
   demo: {
-    backgroundColor: '#FFFAFA',
+    // backgroundColor: '#FFFAFA',
     width: '90%',
     height: 500,
     borderRadius: 10,

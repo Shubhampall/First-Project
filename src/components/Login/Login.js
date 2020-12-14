@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {View, Text, ImageBackground, Linking} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -13,9 +13,10 @@ import Registration from '../Registration/Registration';
 
 const Login = ({navigation, addToEmailHandler, addToPasswordHandler}) => {
   const state = useSelector((state) => state.Login);
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
     <ImageBackground source={LoginBack} style={styles.image}>
-      <View style={styles.demo}>
+      <View style={styles.demo} backgroundColor="#FFFAFA">
         <View style={styles.signuppage}>
           <Text style={styles.Textcolor} size={12}>
             Login with
@@ -74,7 +75,13 @@ const Login = ({navigation, addToEmailHandler, addToPasswordHandler}) => {
           </View>
         </View>
         <View style={styles.checkbox}>
-          <CheckBox borderColor="#663399" style={styles.check} />
+          <CheckBox
+            borderColor="#663399"
+            style={styles.check}
+            disabled={false}
+            value={toggleCheckBox}
+            onValueChange={(newValue) => setToggleCheckBox(newValue)}
+          />
           <Text style={styles.Top3}>Keep Me Remember</Text>
         </View>
         <Text

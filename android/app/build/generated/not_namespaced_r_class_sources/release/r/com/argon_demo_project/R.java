@@ -6501,9 +6501,10 @@ public final class R {
     public static final int src_assets_image_argon=0x7f070092;
     public static final int src_assets_image_background=0x7f070093;
     public static final int src_assets_image_ice=0x7f070094;
-    public static final int test_custom_background=0x7f070095;
-    public static final int tooltip_frame_dark=0x7f070096;
-    public static final int tooltip_frame_light=0x7f070097;
+    public static final int src_assets_image_zuckprofpic=0x7f070095;
+    public static final int test_custom_background=0x7f070096;
+    public static final int tooltip_frame_dark=0x7f070097;
+    public static final int tooltip_frame_light=0x7f070098;
   }
   public static final class id {
     public static final int ALT=0x7f080000;
@@ -6969,8 +6970,9 @@ public final class R {
     public static final int node_modules_reactnativevectoricons_glyphmaps_evilicons=0x7f0e0003;
     public static final int node_modules_reactnativevectoricons_glyphmaps_fontawesome=0x7f0e0004;
     public static final int node_modules_reactnativevectoricons_glyphmaps_fontisto=0x7f0e0005;
-    public static final int node_modules_reactnativevectoricons_glyphmaps_materialcommunityicons=0x7f0e0006;
-    public static final int node_modules_reactnativevectoricons_glyphmaps_materialicons=0x7f0e0007;
+    public static final int node_modules_reactnativevectoricons_glyphmaps_ionicons=0x7f0e0006;
+    public static final int node_modules_reactnativevectoricons_glyphmaps_materialcommunityicons=0x7f0e0007;
+    public static final int node_modules_reactnativevectoricons_glyphmaps_materialicons=0x7f0e0008;
   }
   public static final class string {
     public static final int abc_action_bar_home_description=0x7f0f0000;
