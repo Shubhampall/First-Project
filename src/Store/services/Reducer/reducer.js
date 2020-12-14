@@ -5,18 +5,20 @@ import {
 } from '../../../constant/Constant';
 
 const initalstate = {
-  name: '',
-  email: '',
-  password: '',
+  userData: {
+    name: '',
+    email: '',
+    password: '',
+  },
 };
 const addInput = (state = initalstate, action) => {
   switch (action.type) {
     case Add_To_Email:
-      return {...state, email: action.data};
+      return {...state, userData: {...state.userData, email: action.data}};
     case Add_To_Password:
-      return {...state, password: action.data};
+      return {...state, userData: {...state.userData, password: action.data}};
     case Add_To_Name:
-      return {...state, name: action.data};
+      return {...state, userData: {...state.userData, name: action.data}};
     default:
       return {...state};
   }

@@ -8,30 +8,13 @@
 
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import {StyleSheet} from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {createStackNavigator} from '@react-navigation/stack';
-import Login from './src/components/Login/Login';
-import Registration from './src/components/Registration/Registration';
 import index from './src/components/Main';
-import ConfigStore from './src/Store/store/index';
-import {Provider} from 'react-redux';
-import LoginContainer from './src/Store/Container/LoginContainer';
-import RegistrationContainer from './src/Store/Container/RegistrationContainer';
+import LoginContainer from './src/components/Login/LoginContainer';
+import RegistrationContainer from './src/components/Registration/RegistrationContainer';
 const Stack = createStackNavigator();
 const App = () => {
   return (

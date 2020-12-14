@@ -2,9 +2,9 @@ import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import Home from '../Home/Home';
-import CustomSidebarMenu from '../../constant/CustomSidebarMenu';
-import Profile from '../Profile/Profile';
+import Home from '../Home/index';
+import CustomSidebarMenu from './CustomSidebarMenu';
+import Profile from '../Profile/index';
 
 const Drawer = createDrawerNavigator();
 const index = () => {

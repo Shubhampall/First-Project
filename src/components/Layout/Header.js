@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Entypo';
 import Bell from 'react-native-vector-icons/FontAwesome';
 import Basket from 'react-native-vector-icons/MaterialIcons';
 import Back from 'react-native-vector-icons/Ionicons';
-import Home from '../Home/Home';
+import Home from '../Home/index';
 import styles from './Style';
 
 const CheckIcon = ({name, navigation}) => {
