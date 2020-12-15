@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, ImageBackground, Linking} from 'react-native';
+import {View, Text, ImageBackground, Linking, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CheckBox from '@react-native-community/checkbox';
@@ -10,9 +10,13 @@ import {LoginBack} from '../../constant/images';
 import Inputcomponent from '../commonComponent/Input';
 import ButtonComponent from '../commonComponent/Button';
 import Registration from '../Registration/index';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Login = ({navigation, addToEmailHandler, addToPasswordHandler}) => {
   const state = useSelector((state) => state.Login);
+
+  const Registrationstate = useSelector((state) => state.Registration);
+
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
     <ImageBackground source={LoginBack} style={styles.image}>
@@ -84,27 +88,30 @@ const Login = ({navigation, addToEmailHandler, addToPasswordHandler}) => {
           />
           <Text style={styles.Top3}>Keep Me Remember</Text>
         </View>
-        <Text
+        <TouchableOpacity
           style={styles.Top30}
-          onPress={() => navigation.navigate(Registration)}>
-          Registration
-        </Text>
+          onPress={() => navigation.navigate('Registration')}>
+        <Text> Registration</Text>
+        </TouchableOpacity>
         <View style={styles.buttonComponent}>
           <ButtonComponent
             title="Login"
             navigation={navigation}
             page="Main"
-            pass={state.email}
+            handler={() => {
+              if (
+                state.loginData.email === Registrationstate.userData.email &&
+                state.loginData.password === Registrationstate.userData.password
+              ) {
+                navigation.navigate('Main');
+              } else {
+                Alert.alert('Invalid Email and Password');
+              }
+            }}
           />
         </View>
       </View>
     </ImageBackground>
   );
 };
-// const mapDispatchToProps = (dispatch) => ({
-//   addToEmailHandler: (data) => dispatch(addToEmail(data)),
-//   addToPasswordHandler: (data) => dispatch(addToPassword(data)),
-// });
-// const mapStateToProps = (state) => ({data: state.email});
-// export default connect(mapStateToProps, mapDispatchToProps)(Login);
 export default Login;

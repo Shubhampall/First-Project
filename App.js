@@ -15,6 +15,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import index from './src/components/Main';
 import LoginContainer from './src/components/Login/LoginContainer';
 import RegistrationContainer from './src/components/Registration/RegistrationContainer';
+import Login from './src/components/Login';
 const Stack = createStackNavigator();
 const App = () => {
   return (

@@ -29,7 +29,6 @@ const Registration = ({
           <View style={styles.row}>
             <Icon.Button
               style={styles.button}
-              name="github"
               backgroundColor="#FFFFFF"
               onPress={() => Linking.openURL('https://github.com/')}>
               <Icon name="github" size={30} />
@@ -107,6 +106,7 @@ const Registration = ({
             title="Sign out "
             navigation={navigation}
             page="Login"
+            handler={() => navigation.navigate('Login')}
           />
         </View>
       </View>

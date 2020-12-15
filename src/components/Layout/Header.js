@@ -24,7 +24,7 @@ const CheckIcon = ({name, navigation}) => {
         size={40}
         backgroundColor="#FFFFFF"
         style={styles.Top8}
-        onPress={() => navigation.navigate(Home)}>
+        onPress={() => navigation.goBack()}>
         <Back name="arrow-back" size={30} />
       </Icon.Button>
     );

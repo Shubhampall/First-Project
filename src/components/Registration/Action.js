@@ -2,7 +2,7 @@ import {
   Add_To_Email,
   Add_To_Password,
   Add_To_Name,
-} from '../../constant/Constant';
+} from '../../Store/Types/type';
 
 export const addToEmail = (data) => {
   return {

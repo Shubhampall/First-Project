@@ -27,35 +27,65 @@ const Home = ({navigation}) => {
   }, []);
   return (
     <View style={styles.Background}>
-      <View style={styles.upper}>
+      <View style={{height: '10%', width: '100%', flex: 1}}>
+        <HeaderComponent name="Home" navigation={navigation} />
+      </View>
+      <View style={styles.backgroundBox}>
+        <View style={styles.searchBox}>
+          <Inputcomponent
+            placeholder="What are you looking for?"
+            handle={(text) => {
+              console.log(text);
+            }}
+          />
+        </View>
+        <View style={styles.Top4}>
+          <View style={styles.buttonView}>
+            <Icon.Button backgroundColor="#FFFFFF" style={styles.Top10}>
+              <Diamond name="diamond" size={40} />
+              <Text> Beauty</Text>
+            </Icon.Button>
+            <Text style={styles.middleText}>|</Text>
+            <Icon.Button backgroundColor="#FFFFFF" style={styles.shopping}>
+              <Fashion name="shopping-bag" size={40} />
+              <Text> Fashion</Text>
+            </Icon.Button>
+          </View>
+        </View>
+      </View>
+
+      {/* <View style={styles.upper}>
         <View style={styles.secondupper}>
           <HeaderComponent name="Home" navigation={navigation} />
         </View>
-        <View style={styles.Header}>
-          <View style={styles.input}>
+        <View style={styles.input}>
+          <View style={{left: '40%', width: '80%'}}>
             <Inputcomponent
               placeholder="What are you looking for?"
               handle={(text) => {
                 console.log(text);
               }}
             />
+          </View>
+          <View style={{marginLeft: '10%'}}>
             <Icon name="search" size={18} />
           </View>
-          <View style={styles.Top4}>
-            <View style={styles.buttonView}>
-              <Icon.Button backgroundColor="#FFFFFF" style={styles.Top10}>
-                <Diamond name="diamond" size={40} />
-                <Text> Beauty</Text>
-              </Icon.Button>
-              <Text style={styles.middleText}>|</Text>
-              <Icon.Button backgroundColor="#FFFFFF" style={styles.shopping}>
-                <Fashion name="shopping-bag" size={40} />
-                <Text> Fashion</Text>
-              </Icon.Button>
-            </View>
+        </View>
+
+        <View style={styles.Top4}>
+          <View style={styles.buttonView}>
+            <Icon.Button backgroundColor="#FFFFFF" style={styles.Top10}>
+              <Diamond name="diamond" size={40} />
+              <Text> Beauty</Text>
+            </Icon.Button>
+            <Text style={styles.middleText}>|</Text>
+            <Icon.Button backgroundColor="#FFFFFF" style={styles.shopping}>
+              <Fashion name="shopping-bag" size={40} />
+              <Text> Fashion</Text>
+            </Icon.Button>
           </View>
         </View>
-      </View>
+      </View> */}
       <View style={styles.scrollView}>
         <ScrollView height="100%" width="100%" style={styles.scroll}>
           {isLoading ? (

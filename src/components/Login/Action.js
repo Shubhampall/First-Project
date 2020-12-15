@@ -1,14 +1,14 @@
-import {Add_To_Email, Add_To_Password} from '../../constant/Constant';
+import {Login_Email, Login_Password} from '../../Store/Types/type';
 
 export const addToEmail = (data) => {
   return {
-    type: Add_To_Email,
+    type: Login_Email,
     data,
   };
 };
 export const addToPassword = (data) => {
   return {
-    type: Add_To_Password,
+    type: Login_Password,
     data,
   };
 };
