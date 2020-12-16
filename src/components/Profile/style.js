@@ -1,98 +1,78 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   image: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
+    flex: 1
   },
-  Header: {top: 0, height: '10%', marginTop: '0%'},
   FirstView: {
-    width: 'auto',
-    height: '100%',
-    marginTop: 30,
-    alignItems: 'center',
-    flex: 1,
+    flex: 1
   },
   ScrollView: {
-    marginTop: 0,
-    flexDirection: 'row',
-    flex: 1,
-    width: '100%',
+    flex: 1
   },
   Upper: {
-    backgroundColor: 'white',
-    width: 330,
-    height: '100%',
-    marginTop: 80,
-    alignItems: 'center',
-    flex: 10,
+    alignSelf: "center",
+    backgroundColor: "white",
+    width: "85%",
+    height: "100%",
+    marginTop: 120,
+    alignItems: "center"
   },
   SecondUpper: {
-    marginTop: 0,
-    width: 124,
-    height: 124,
-    borderRadius: 62,
-    top: -60,
+    top: -60
   },
-  ImageContainer: {height: 124, width: 124, borderRadius: 62},
+  ImageContainer: { height: 124, width: 124, borderRadius: 62 },
   ButtonContainer: {
     marginTop: -50,
-    width: '100%',
-    height: '15%',
-    flexDirection: 'row',
+    width: "100%",
+    height: 38,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginBottom: 10
   },
-  margon60: {marginLeft: 60},
-  margin40: {marginLeft: 40},
+  margon60: { marginLeft: 60 },
+  margin40: { marginLeft: 40 },
   styleContainer: {
-    width: '100%',
-    height: '25%',
+    width: "100%",
     marginTop: 0,
-    flexDirection: 'row',
+    flexDirection: "row"
   },
   Frind: {
-    backgroundColor: 'white',
-    height: '80%',
-    width: '25%',
+    backgroundColor: "white",
+    height: "80%",
+    width: "25%",
     marginLeft: 20,
     marginTop: 10,
-    flexDirection: 'column',
-    alignItems: 'center',
+    flexDirection: "column",
+    alignItems: "center"
   },
-  Font30: {fontSize: 30, color: '#808080'},
-  Font15: {fontSize: 15, color: '#8898AA'},
+  Font30: { fontSize: 30, color: "#808080" },
+  Font15: { fontSize: 15, color: "#8898AA" },
   content: {
-    width: '100%',
-    height: '15%',
+    width: "100%",
     marginTop: 5,
-    flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: "center"
   },
   contentUpper: {
-    width: '80%',
-    height: '90%',
-    flexDirection: 'column',
-    alignItems: 'center',
-    marginTop: 0,
-    marginLeft: 30,
+    width: "80%",
+    alignItems: "center",
+    marginVertical: 10
   },
-  TextFont: {fontSize: 15, color: '#808080'},
-  Name: {fontSize: 20, color: '#696969'},
+  TextFont: { fontSize: 15, color: "#808080" },
+  Name: { fontSize: 20, color: "#696969" },
   aboutUpper: {
-    width: '100%',
-    height: '20%',
+    width: "100%",
     marginTop: 0,
-    alignItems: 'center',
+    alignItems: "center"
   },
   about: {
-    backgroundColor: 'white',
-    width: '90%',
-    height: '60%',
+    backgroundColor: "white",
+    width: "90%",
     marginTop: 5,
-    alignItems: 'center',
+    alignItems: "center"
   },
-  aboutText: {fontSize: 13, color: '#808080'},
-  buttonView: {width: '40%', height: '30%', alignItems: 'center'},
-  buttonText: {fontSize: 17, color: 'blue'},
-  Lower: {backgroundColor: 'white', height: '100%', top: 0, flex: 1},
-  ItemContainer: {backgroundColor: 'white', height: '60%'},
+  aboutText: { fontSize: 13, color: "#808080" },
+  buttonView: { width: "40%", alignItems: "center" },
+  buttonText: { fontSize: 17, color: "blue" },
+  Lower: { backgroundColor: "white", height: "100%", top: 0, flex: 1 },
+  ItemContainer: { backgroundColor: "white", height: "60%" }
 });

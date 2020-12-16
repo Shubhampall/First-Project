@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import {TextInput} from 'react-native-gesture-handler';
-import {StyleSheet, View} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import React, { useState } from "react";
+import { TextInput } from "react-native-gesture-handler";
+import { StyleSheet, View } from "react-native";
+import Icon from "react-native-vector-icons/FontAwesome5";
 
-const Inputcomponent = ({placeholder, show = false, handle}) => {
+const Inputcomponent = ({ placeholder, show = false, handle }) => {
   const [hidePass, setHidePass] = useState(show);
   return (
     <View style={styles.flex}>
@@ -11,11 +11,11 @@ const Inputcomponent = ({placeholder, show = false, handle}) => {
         placeholder={placeholder}
         secureTextEntry={hidePass}
         style={styles.input}
-        onChangeText={(text) => handle(text)}
+        onChangeText={text => handle(text)}
       />
-      {placeholder === 'Enter Your Password' ? (
+      {placeholder === "Enter Your Password" ? (
         <Icon
-          name={hidePass ? 'eye-slash' : 'eye'}
+          name={hidePass ? "eye-slash" : "eye"}
           size={18}
           color="grey"
           style={styles.Icon}
@@ -26,11 +26,11 @@ const Inputcomponent = ({placeholder, show = false, handle}) => {
   );
 };
 const styles = StyleSheet.create({
-  input1: {
-    width: '80%',
+  input: {
+    width: "80%"
   },
-  Icon: {marginTop: '07%', position: 'absolute', marginLeft: '80%'},
-  flex: {flexDirection: 'row'},
+  Icon: { marginTop: "07%", position: "absolute", marginLeft: "80%" },
+  flex: { flexDirection: "row" }
 });
 
 export default Inputcomponent;
